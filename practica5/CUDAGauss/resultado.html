@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+    <style type="text/css">
+    * {
+      font-family: 'Lato', sans-serif;  
+    }
+    img {
+        float: left;
+        width: 30%;
+        padding: 1% 0% 1%;
+        margin: 0%;
+        border-radius: 1%;
+        border-width: 1%;
+    }
+    h2,p {
+        float: left;
+        width: 65%;
+        padding: 1% 0% 1%;
+        margin: 0%;
+        color:black;
+        font-size: x-large;
+        
+    }    
+    
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>Visualizacion de Resultados</h1>
+{% csrf_token %}
+{% load static %}
+<img src="{% static 'result.jpg' %}" alt="Imagen" />
+<p>{{imagen.name}}</p>
+<p>Numero de hilos:1024</p>
+<p>Numero de bloques:1024</p>
+<p>Mascara 5x5: {{imagen.opcion}}</p>
+
+</body>
+</html>

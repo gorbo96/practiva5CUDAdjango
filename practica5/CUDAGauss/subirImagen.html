@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es" dir=ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Subir una Imagen</title>        
+    </head>
+    <body>
+        <form action="{% url 'CUDAGauss:subir_imagen' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}  
+            <p>
+                <input id='id_imagen' type='file' accept="image/*" name="image" required> 
+            </p>
+            <p>
+                <input id="id_nombre" type="text" name="name" required hidden value="Resultado">
+            </p>
+            <input id="3x3"type="checkbox" name="opcion" value="3x3"> Aumentar mascara            
+            <input type="submit" value="Enviar" />
+        </form>
+    </body>
+</html>
